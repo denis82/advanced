@@ -53,7 +53,7 @@ class PasswordResetRequestForm extends Model
                 return false;
             }
         }
-
+//die(Yii::$app->security->generatePasswordHash($user->password_reset_token));
         return Yii::$app
             ->mailer
             ->compose(
@@ -64,5 +64,6 @@ class PasswordResetRequestForm extends Model
             ->setTo($this->email)
             ->setSubject('Password reset for ' . Yii::$app->name)
             ->send();
+            
     }
 }
