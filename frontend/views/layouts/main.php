@@ -30,99 +30,65 @@ AppAsset::register($this);
 
 <div id="page-wrapper">
 
-    <?php
-//	  NavBar::begin([
-//	      'brandLabel' => 'ZeroFour',
-//	      'brandUrl' => Yii::$app->homeUrl,
-//	      'options' => [
-//		  'class' => 'inner',
-//	      ],
-//	  ]);
-//	  $menuItems = [
-//	      ['label' => 'Home', 'url' => ['/site/index']],
-//	      ['label' => 'About', 'url' => ['/site/about']],
-//	      ['label' => 'Contact', 'url' => ['/site/contact']],
-//	  ];
-//	  if (Yii::$app->user->isGuest) {
-//	      $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-//	      $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-//	  } else {
-//	      $menuItems[] = '<li>'
-//		  . Html::beginForm(['/site/logout'], 'post')
-//		  . Html::submitButton(
-//		      'Logout (' . Yii::$app->user->identity->username . ')',
-//		      ['class' => 'btn btn-link logout']
-//		  )
-//		  . Html::endForm()
-//		  . '</li>';
-//	  }
-//	  echo Nav::widget([
-//	      'options' => ['id' => 'nav'],
-//	      'items' => $menuItems,
-//	  ]);
-//	  NavBar::end();
-        
-        
-          
-	  ?>
-			<!-- Header -->
-				<div id="header-wrapper">
-					<div class="container">
 
-						<!-- Header -->
-							<header id="header">
-                                                            
-                                                                <div class="inner">
+<!-- Header -->
+    <div id="header-wrapper">
+        <div class="container">
 
-                                                                        <!-- Logo -->
-                                                                                <h1><a href="index.html" id="logo">ZeroFour</a></h1>
+<!-- Header -->
+            <header id="header">
 
-                                                                        <!-- Nav -->
-                                                                                <nav id="nav">
-                                                                                       <?php echo Menu::widget([
-                                                                                            'items' => [
+                <div class="inner">
 
-                                                                                                ['label' => 'Home', 'url' => ['site/index']],
-                                                                                                // 'Products' menu item will be selected as long as the route is 'product/index'
-                                                                                                ['label' => 'Dropdown',
-                                                                                                        'url' => ['services/index'],
-                                                                                                        'options'=>['class'=>'dropdown'],
-                                                                                                        'template' => '<a href="{url}" class="url-class">{label}</a>',
-                                                                                                        'items' => [
-                                                                                                                ['label' => 'Lorem ipsum dolor', 'url' => ['services/juridical-services']],
-                                                                                                                ['label' => 'Magna phasellus', 'url' => ['services/valuation-services']],
-                                                                                                                ['label' => 'Phasellus consequat', 'url' => ['services/valuation-services']],
-                                                                                                        ]
-                                                                                                ],
-                                                                                                ['label' => 'Left Sidebar', 'url' => ['site/login']],
-                                                                                                ['label' => 'Right Sidebar', 'url' => ['site/index']],
-                                                                                                
-                                                                                                ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
-                                                                                                 
-                                                                                            ],
-                                                                                            'encodeLabels' =>'false',
-                                                                                            'activeCssClass'=>'current_page_item',
-                                                                                            'firstItemCssClass'=>'fist',
-                                                                                            'lastItemCssClass' =>'last',
-                                                                                        ]); ?>
+<!-- Logo -->
+                    <h1><a href="index.html" id="logo">ZeroFour</a></h1>
 
-                                                                                </nav>
+<!-- Nav -->
+                    <nav id="nav">
+                        <?php echo Menu::widget([
+                            'items' => [
 
-                                                                </div>
-                                                            
-							</header>
+                                ['label' => 'Home', 'url' => ['site/index']],
+                                // 'Products' menu item will be selected as long as the route is 'product/index'
+                                ['label' => 'Dropdown',
+                                        'url' => ['services/index'],
+                                        'options'=>['class'=>'dropdown'],
+                                        'template' => '<a href="{url}" class="url-class">{label}</a>',
+                                        'items' => [
+                                                ['label' => 'Lorem ipsum dolor', 'url' => ['services/juridical-services']],
+                                                ['label' => 'Magna phasellus', 'url' => ['services/valuation-services']],
+                                                ['label' => 'Phasellus consequat', 'url' => ['services/valuation-services']],
+                                        ]
+                                ],
+                                ['label' => 'Left Sidebar', 'url' => ['site/login']],
+                                ['label' => 'Right Sidebar', 'url' => ['site/index']],
 
-						<!-- Banner -->
-							<div id="banner">
-								<h2><strong>ZeroFour:</strong> A free responsive site template
-								<br />
-								built on HTML5 and CSS3 by <a href="http://html5up.net">HTML5 UP</a></h2>
-								<p>Does this statement make you want to click the big shiny button?</p>
-								<a href="#" class="button big icon fa-check-circle">Yes it does</a>
-							</div>
+                                ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
 
-					</div>
-				</div>
+                            ],
+                            'encodeLabels' =>'false',
+                            'activeCssClass'=>'current_page_item',
+                            'firstItemCssClass'=>'fist',
+                            'lastItemCssClass' =>'last',
+                        ]); ?>
+
+                    </nav>
+
+                </div>
+
+            </header>
+
+    <!-- Banner -->
+            <div id="banner">
+                    <h2><strong>ZeroFour:</strong> A free responsive site template
+                    <br />
+                    built on HTML5 and CSS3 by <a href="http://html5up.net">HTML5 UP</a></h2>
+                    <p>Does this statement make you want to click the big shiny button?</p>
+                    <a href="#" class="button big icon fa-check-circle">Yes it does</a>
+            </div>
+
+        </div>
+    </div>
 
 			<!-- Main Wrapper -->
 				<div id="main-wrapper">
