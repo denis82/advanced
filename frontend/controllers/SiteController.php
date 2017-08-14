@@ -8,6 +8,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\LoginForm;
+use frontend\models\Articles;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
@@ -104,7 +105,32 @@ class SiteController extends Controller
             ]);
         }
     }
+    
+    /**
+     * Logs out the current user.
+     *
+     * @return mixed
+     */
+    public function actionSchedule()
+    {
+        
 
+        return $this->render('schedule');
+    }
+    
+    /**
+     * Logs out the current user.
+     *
+     * @return mixed
+     */
+    public function actionBlog()
+    {
+        //$modelArticles = new Articles();
+        $modelArticles = Articles::find()->all();
+        
+        return $this->render('blog', ['modelArticles' => $modelArticles]);
+    }
+    
     /**
      * Logs out the current user.
      *
