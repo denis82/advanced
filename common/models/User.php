@@ -25,7 +25,7 @@ class User extends ActiveRecord implements IdentityInterface
 {
     const STATUS_DELETED = 0;
     const STATUS_ACTIVE = 10;
-
+    const ROLE_ADMIN = 20;
 
     /**
      * @inheritdoc
@@ -53,6 +53,7 @@ class User extends ActiveRecord implements IdentityInterface
         return [
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
+            ['role', 'in', 'range' => [self::ROLE_USER, self::ROLE_ADMIN]],
         ];
     }
 
@@ -150,6 +151,7 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public function validatePassword($password)
     {
+        
         return Yii::$app->security->validatePassword($password, $this->password_hash);
     }
 
@@ -160,6 +162,7 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public function setPassword($password)
     {
+        
         $this->password_hash = Yii::$app->security->generatePasswordHash($password);
     }
 
@@ -176,7 +179,8 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public function generatePasswordResetToken()
     {
-        $this->password_reset_token = Yii::$app->security->generateRandomString() . '_' . time();
+        //$this->password_reset_token = Yii::$app->security->generateRandomString() . '_' . time();
+        $this->password_reset_token = Yii::$app->security->generateRandomString() ;
     }
 
     /**
@@ -185,5 +189,15 @@ class User extends ActiveRecord implements IdentityInterface
     public function removePasswordResetToken()
     {
         $this->password_reset_token = null;
+    }
+    
+    public static function isUserAdmin($username)
+    {
+        if (static::findOne(['username' => $username, 'role' => self::ROLE_ADMIN]))
+        {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
