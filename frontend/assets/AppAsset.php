@@ -16,6 +16,12 @@ class AppAsset extends AssetBundle
         'css/main.css',
     ];
     public $js = [
+        'js/jquery.min.js',
+        'js/jquery.dropotron.min.js',
+        'js/skel.min.js',
+        'js/skel-viewport.min.js',
+        'js/util.js',
+        'js/dev.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',

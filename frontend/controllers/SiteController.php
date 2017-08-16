@@ -8,7 +8,6 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\LoginForm;
-use frontend\models\Articles;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
@@ -114,7 +113,6 @@ class SiteController extends Controller
     public function actionSchedule()
     {
         
-
         return $this->render('schedule');
     }
     

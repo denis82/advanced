@@ -50,14 +50,15 @@ AppAsset::register($this);
 
                                 ['label' => 'Home', 'url' => ['site/index']],
                                 // 'Products' menu item will be selected as long as the route is 'product/index'
-                                ['label' => 'Dropdown',
+                                ['label' => 'Blog',
                                         'url' => ['services/index'],
-                                        'options'=>['class'=>'dropdown'],
                                         'template' => '<a href="{url}" class="url-class">{label}</a>',
                                         'items' => [
-                                                ['label' => 'Lorem ipsum dolor', 'url' => ['services/juridical-services']],
-                                                ['label' => 'Magna phasellus', 'url' => ['services/valuation-services']],
-                                                ['label' => 'Phasellus consequat', 'url' => ['services/valuation-services']],
+                                                ['label' => 'Blog pagination', 'url' => ['blog/index']],
+                                                ['label' => 'Blog ajaxPagination', 'url' => ['blog/ajaxpagination']],
+                                                ['label' => 'Blog permanentPagination', 'url' => ['blog/permanent']],
+                                                
+                                                
                                         ]
                                 ],
                                 ['label' => 'Blog', 'url' => ['site/blog']],
@@ -66,6 +67,7 @@ AppAsset::register($this);
                                 ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
 
                             ],
+                           
                             'encodeLabels' =>'false',
                             'activeCssClass'=>'current_page_item',
                             'firstItemCssClass'=>'fist',
